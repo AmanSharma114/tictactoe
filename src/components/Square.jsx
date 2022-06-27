@@ -1,12 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-const Square = ({value,onClick}) => {
-    return (
-        <button type="button" className='square' onClick={onClick}>
-            {value}
-        </button>
-    );
-
+const Square = ({ value, onClick, isWinningSquare }) => {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`square ${isWinningSquare ? 'winning' : ''} ${
+        value === 'X' ? 'text-green' : 'text-orange'
+      }`}
+    >
+      {value}
+    </button>
+  );
 };
 
-export default Square
+export default Square;
